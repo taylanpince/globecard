@@ -11,4 +11,7 @@ urlpatterns = patterns('',
 
     # Events
     (r'^events/', include("events.urls")),
+
+    # Locations
+    (r'^locations/', include("locations.urls")),
 )

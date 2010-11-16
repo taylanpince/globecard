@@ -58,6 +58,7 @@ INSTALLED_APPS = (
     'south',
 
     'events',
+    'locations',
     'publisher',
 )
 
