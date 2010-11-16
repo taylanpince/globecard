@@ -1,0 +1,4 @@
+*.pyc
+build/globecard/media/admin
+build/globecard/media/files
+build/globecard/settings_local.py
