@@ -3,7 +3,7 @@ from datetime import datetime
 from django.db import models
 
 
-class PublishableModelManager(PublishedManager):
+class PublishableModelManager(models.Manager):
     def get_query_set(self):
         return super(PublishableModelManager, self).get_query_set().filter((
             models.Q(published=True)

@@ -57,7 +57,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'south',
 
-    
+    'publisher',
 )
 
 try:
