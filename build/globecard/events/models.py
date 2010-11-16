@@ -34,7 +34,7 @@ class Event(PublishableModel):
     class Meta:
         verbose_name = _("Event")
         verbose_name_plural = _("Events")
-        ordering = ["order"]
+        ordering = ["category", "order"]
 
     def __unicode__(self):
         return self.title

@@ -3,10 +3,12 @@
 
 {% block content %}
 
-{% for category in categories %}
-<h2>{{ category.title }}</h2>
+{% regroup events by category as categories%}
 
-{% for event in category.events.all %}
+{% for category in categories %}
+<h2>{{ category.grouper }}</h2>
+
+{% for event in category.list %}
 <h3>{{ event.title }}</h3>
 {% endfor %}
 
