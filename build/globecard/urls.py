@@ -8,4 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Admin
     (r'^admin/', include(admin.site.urls)),
+
+    # Events
+    (r'^events/', include("events.urls")),
 )

@@ -57,6 +57,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'south',
 
+    'events',
     'publisher',
 )
 
