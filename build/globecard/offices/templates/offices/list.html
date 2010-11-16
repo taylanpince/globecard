@@ -1,0 +1,10 @@
+{% extends "offices/base.html" %}
+
+
+{% block content %}
+
+{% for office in offices %}
+<h2>{{ office.name }}</h2>
+{% endfor %}
+
+{% endblock %}

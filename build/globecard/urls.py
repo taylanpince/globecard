@@ -14,4 +14,7 @@ urlpatterns = patterns('',
 
     # Locations
     (r'^locations/', include("locations.urls")),
+
+    # Offices
+    (r'^offices/', include("offices.urls")),
 )
