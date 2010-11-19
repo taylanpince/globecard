@@ -1,0 +1,14 @@
+{% extends "careers/base.html" %}
+
+
+{% block content %}
+
+<h2>Apply for a Position</h2>
+
+<form method="post" action="{% url careers_apply %}">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<p><input type="submit" value="Submit" /></p>
+</form>
+
+{% endblock %}

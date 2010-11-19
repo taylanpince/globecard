@@ -57,6 +57,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'south',
 
+    'careers',
     'events',
     'locations',
     'news',
