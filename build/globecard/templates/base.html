@@ -25,6 +25,14 @@
 
 	<div id="Container">
 		{% block content %}{% endblock %}
+		
+		<ul>
+			<li><a href="{% url events_list %}">Events</a></li>
+			<li><a href="{% url news_list %}">News</a></li>
+			<li><a href="{% url locations_landing %}">Locations</a></li>
+			<li><a href="{% url offices_list %}">Offices</a></li>
+			<li><a href="{% url careers_landing %}">Careers</a></li>
+		</ul>
 	</div>
 
 </body>

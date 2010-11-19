@@ -27,3 +27,10 @@ urlpatterns = patterns('',
     # MarkItUp
     (r'^markitup/', include('markitup.urls')),
 )
+
+urlpatterns += patterns('django.views.generic.simple',
+    # Home
+    url(r"^$", "direct_to_template", {
+        "template": "home.html",
+    }, name="home"),
+)
