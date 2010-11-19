@@ -67,6 +67,7 @@ INSTALLED_APPS = (
     'locations',
     'news',
     'offices',
+    'pages',
     'publisher',
 )
 

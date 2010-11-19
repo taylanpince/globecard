@@ -26,6 +26,9 @@ urlpatterns = patterns('',
     
     # MarkItUp
     (r'^markitup/', include('markitup.urls')),
+
+    # Pages
+    (r'^', include('pages.urls')),
 )
 
 urlpatterns += patterns('django.views.generic.simple',
