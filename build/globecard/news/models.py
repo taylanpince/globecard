@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from markitup.fields import MarkupField
+
 from publisher.models import PublishableModel
 
 
@@ -11,7 +13,7 @@ class NewsEntry(PublishableModel):
     title = models.CharField(_("Title"), max_length=255)
     slug = models.SlugField(_("Slug"), max_length=255)
     image = models.ImageField(_("Image"), upload_to="files/news", blank=True, null=True)
-    content = models.TextField(_("Content"), blank=True)
+    content = MarkupField(_("Content"), blank=True)
 
     @models.permalink
     def get_absolute_url(self):

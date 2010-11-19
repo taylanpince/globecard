@@ -5,8 +5,7 @@
 
 {% for position in positions %}
 	<h3>{{ position.title }}</h3>
-	<p>{{ position.prerequisites }}</p>
-	<p>{{ position.description }}</p>
+	{{ position.description }}
 	<hr />
 {% endfor %}
 

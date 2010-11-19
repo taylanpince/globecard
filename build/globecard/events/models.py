@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from markitup.fields import MarkupField
+
 from publisher.models import PublishableModel
 
 
@@ -28,7 +30,7 @@ class Event(PublishableModel):
     title = models.CharField(_("Title"), max_length=255)
     url = models.URLField(_("Web Site"), blank=True, null=True, verify_exists=True)
     dates = models.CharField(_("Dates"), blank=True, max_length=255)
-    content = models.TextField(_("Content"), blank=True)
+    content = MarkupField(_("Content"), blank=True)
     order = models.PositiveSmallIntegerField(_("Order"), default=0)
 
     class Meta:

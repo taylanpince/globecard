@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from markitup.fields import MarkupField
+
 from publisher.models import PublishableModel
 from careers.constants import *
 
@@ -10,8 +12,7 @@ class JobPosition(PublishableModel):
     A job position
     """
     title = models.CharField(_("Title"), max_length=255)
-    prerequisites = models.TextField(_("Prerequisites"), blank=True)
-    description = models.TextField(_("Description"), blank=True)
+    description = MarkupField(_("Description"), blank=True)
     order = models.PositiveSmallIntegerField(_("Order"), default=0)
 
     class Meta:

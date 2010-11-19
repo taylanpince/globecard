@@ -1,4 +1,5 @@
 *.pyc
 build/globecard/media/admin
+build/globecard/media/markitup
 build/globecard/media/files
 build/globecard/settings_local.py

@@ -44,6 +44,10 @@ TEMPLATE_DIRS = (
     os.path.join(os.path.realpath(os.path.dirname(__file__)), 'templates/'),
 )
 
+MARKITUP_FILTER = ('markdown.markdown', {})
+MARKITUP_SET = 'markitup/sets/markdown'
+MARKITUP_AUTO_PREVIEW = True
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,6 +58,7 @@ INSTALLED_APPS = (
     'django.contrib.markup',
 
     'django_extensions',
+    'markitup',
     'sorl.thumbnail',
     'south',
 

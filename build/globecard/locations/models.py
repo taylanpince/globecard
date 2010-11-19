@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from markitup.fields import MarkupField
+
 from publisher.models import PublishableModel
 
 
@@ -10,7 +12,7 @@ class Location(PublishableModel):
     """
     name = models.CharField(_("Name"), max_length=255)
     slug = models.SlugField(_("Slug"), max_length=255)
-    content = models.TextField(_("Content"), blank=True)
+    content = MarkupField(_("Content"), blank=True)
     order = models.PositiveSmallIntegerField(_("Order"), default=0)
 
     @models.permalink
@@ -34,7 +36,7 @@ class Client(PublishableModel):
     """
     location = models.ForeignKey(Location, verbose_name=_("Location"), related_name="clients")
     name = models.CharField(_("Name"), max_length=255)
-    content = models.TextField(_("Content"), blank=True)
+    content = MarkupField(_("Content"), blank=True)
     image = models.ImageField(_("Image"), upload_to="files/clients", blank=True, null=True)
     order = models.PositiveSmallIntegerField(_("Order"), default=0)
 

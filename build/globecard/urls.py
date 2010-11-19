@@ -23,4 +23,7 @@ urlpatterns = patterns('',
 
     # Careers
     (r'^careers/', include("careers.urls")),
+    
+    # MarkItUp
+    (r'^markitup/', include('markitup.urls')),
 )

@@ -6,7 +6,7 @@ from careers.models import JobPosition, JobApplication
 
 class JobPositionAdmin(admin.ModelAdmin):
     list_display = ("title", "creation_date", "modification_date", "publication_date", "expiration_date", "published", "order")
-    search_fields = ("title", "prerequisites", "description")
+    search_fields = ("title", "description")
     list_filter = ("published", )
 
     save_on_top = True
@@ -14,7 +14,7 @@ class JobPositionAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            "fields": ("title", "prerequisites", "description", "order")
+            "fields": ("title", "description", "order")
         }),
         (_("Publication Settings"), {
             "fields": ("publication_date", "expiration_date", "published")
