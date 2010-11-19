@@ -17,4 +17,7 @@ urlpatterns = patterns('',
 
     # Offices
     (r'^offices/', include("offices.urls")),
+
+    # News
+    (r'^news/', include("news.urls")),
 )

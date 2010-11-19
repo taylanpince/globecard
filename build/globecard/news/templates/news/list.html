@@ -1,0 +1,24 @@
+{% extends "news/base.html" %}
+
+
+{% block content %}
+
+{% for entry in entries.object_list %}
+	<h2>{{ entry.title }}</h2>
+	{{ entry.content }}
+	<hr />
+{% endfor %}
+
+<p>
+	{% if entries.has_previous %}
+	<a href="?page={{ contacts.previous_page_number }}">&laquo;</a>
+	{% endif %}
+
+	Page {{ entries.number }} of {{ entries.paginator.num_pages }}
+
+	{% if entries.has_next %}
+	<a href="?page={{ entries.next_page_number }}">&raquo;</a>
+	{% endif %}
+</p>
+
+{% endblock %}
