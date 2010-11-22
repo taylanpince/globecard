@@ -25,6 +25,10 @@ class Page(PublishableModel):
             "slug": self.slug,
         })
 
+    @property
+    def base_template(self):
+        return "%s/base.html" % self.section
+
     class Meta:
         verbose_name = _("Page")
         verbose_name_plural = _("Pages")

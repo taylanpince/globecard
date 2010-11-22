@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load page_tags %}
+
+
+{% block subnav %}
+
+{% pages_for_section page.section as pages %}
+
+<ul>
+	{% for p in pages %}
+	<li><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></li>
+	{% endfor %}
+</ul>
+
+<hr />
+
+{% endblock %}

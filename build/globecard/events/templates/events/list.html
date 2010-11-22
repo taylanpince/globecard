@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "home/base.html" %}
 
 
 {% block content %}
@@ -11,6 +11,7 @@
 {% for event in category.list %}
 <h3>{{ event.title }}</h3>
 {{ event.content }}
+<hr />
 {% endfor %}
 
 {% endfor %}

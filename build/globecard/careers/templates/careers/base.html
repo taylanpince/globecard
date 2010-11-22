@@ -1,1 +1,10 @@
 {% extends "base.html" %}
+
+{% block subnav %}
+<ul>
+	<li><a href="{% url careers_list %}">Available Job Positions</a></li>
+	<li><a href="{% url careers_apply %}">Apply For A Position</a></li>
+</ul>
+
+<hr />
+{% endblock %}

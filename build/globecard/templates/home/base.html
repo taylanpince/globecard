@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load page_tags %}
+
+
+{% block subnav %}
+
+{% pages_for_section "home" as pages %}
+
+<ul>
+	<li><a href="{% url news_list %}">News</a></li>
+	<li><a href="{% url events_list %}">Events</a></li>
+	{% for page in pages %}
+	<li><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></li>
+	{% endfor %}
+	<li><a href="{% url offices_list %}">Offices</a></li>
+</ul>
+
+<hr />
+
+{% endblock %}

@@ -4,7 +4,8 @@
 {% block content %}
 
 {% for office in offices %}
-<h2>{{ office.name }}</h2>
+{% include "offices/office.html" %}
+{% if not forloop.last %}<hr />{% endif %}
 {% endfor %}
 
 {% endblock %}

@@ -3,18 +3,22 @@
 
 {% block content %}
 
-<h2>{{ location.name }}</h2>
-<p>{{ location.content }}</p>
-
-{% for client in location.clients.all %}
-<h3>{{ client.name }}</h3>
-<p>{{ client.content }}</p>
-{% endfor %}
-
 <ul>
 	{% for loc in locations %}
 	<li><a href="{{ loc.get_absolute_url }}">{{ loc.name }}</a></li>
 	{% endfor %}
 </ul>
+
+<hr />
+
+<h2>{{ location.name }}</h2>
+{{ location.content }}
+
+<h3>Clients</h3>
+
+{% for client in location.clients.all %}
+<h4>{{ client.name }}</h4>
+{{ client.content }}
+{% endfor %}
 
 {% endblock %}

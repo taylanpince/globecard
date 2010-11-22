@@ -34,6 +34,6 @@ urlpatterns = patterns('',
 urlpatterns += patterns('django.views.generic.simple',
     # Home
     url(r"^$", "direct_to_template", {
-        "template": "home.html",
+        "template": "home/index.html",
     }, name="home"),
 )

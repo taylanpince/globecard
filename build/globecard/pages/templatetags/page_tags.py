@@ -10,11 +10,11 @@ register = template.Library()
 
 class PagesForSectionNode(template.Node):
     def __init__(self, section, var_name):
-        self.section = section
+        self.section = template.Variable(section)
         self.var_name = var_name
 
     def render(self, context):
-        context[self.var_name] = Page.objects.filter(section=self.section)
+        context[self.var_name] = Page.objects.filter(section=self.section.resolve(context))
 
         return ""
 

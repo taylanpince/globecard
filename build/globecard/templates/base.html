@@ -24,15 +24,23 @@
 <body id="top" class="{% block class %}{% endblock %}">
 
 	<div id="Container">
-		{% block content %}{% endblock %}
+		<h1>Globe Card</h1>
 		
 		<ul>
-			<li><a href="{% url events_list %}">Events</a></li>
-			<li><a href="{% url news_list %}">News</a></li>
-			<li><a href="{% url locations_landing %}">Locations</a></li>
-			<li><a href="{% url offices_list %}">Offices</a></li>
+			<li><a href="{% url home %}">Home</a></li>
+			<li><a href="{% url pages_section "know-how" %}">Know How</a></li>
+			<li><a href="{% url pages_section "services" %}">Services</a></li>
+			<li><a href="{% url locations_landing %}">Profile</a></li>
 			<li><a href="{% url careers_landing %}">Careers</a></li>
+			<li><a href="{% url pages_section "support" %}">Support</a></li>
+			<li><a href="{% url offices_list %}">Contact Us</a></li>
 		</ul>
+		
+		<hr />
+		
+		{% block subnav %}{% endblock %}
+
+		{% block content %}{% endblock %}
 	</div>
 
 </body>
