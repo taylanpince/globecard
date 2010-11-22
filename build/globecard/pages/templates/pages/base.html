@@ -7,6 +7,7 @@
 
 {% pages_for_section page.section as pages %}
 
+{% if pages %}
 <ul>
 	{% for p in pages %}
 	<li><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></li>
@@ -14,5 +15,6 @@
 </ul>
 
 <hr />
+{% endif %}
 
 {% endblock %}

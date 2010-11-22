@@ -5,9 +5,9 @@ from pages.models import Page
 
 
 class PageAdmin(admin.ModelAdmin):
-    list_display = ("title", "section", "creation_date", "modification_date", "publication_date", "expiration_date", "published", "order")
+    list_display = ("title", "section", "creation_date", "modification_date", "publication_date", "expiration_date", "published", "order", "landing")
     search_fields = ("title", "content")
-    list_filter = ("published", "section")
+    list_filter = ("published", "section", "landing")
     prepopulated_fields = {
         "slug": ("title",),
     }
@@ -17,7 +17,7 @@ class PageAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            "fields": (("title", "slug"), "section", "content", "image", "order")
+            "fields": (("title", "slug"), "section", "content", "image", "order", "landing")
         }),
         (_("Publication Settings"), {
             "fields": ("publication_date", "expiration_date", "published")

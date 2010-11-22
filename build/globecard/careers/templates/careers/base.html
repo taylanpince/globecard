@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 
+{% load page_tags %}
+
+
 {% block subnav %}
+
+{% pages_for_section "careers" as pages %}
+
 <ul>
+	{% for page in pages %}
+	<li><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></li>
+	{% endfor %}
 	<li><a href="{% url careers_list %}">Available Job Positions</a></li>
 	<li><a href="{% url careers_apply %}">Apply For A Position</a></li>
 </ul>

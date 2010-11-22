@@ -17,6 +17,7 @@ class Page(PublishableModel):
     image = models.ImageField(_("Image"), upload_to="files/pages", blank=True, null=True)
     order = models.PositiveSmallIntegerField(_("Order"), default=0)
     section = models.CharField(_("Section"), choices=SECTION_CHOICES, default=SECTION_HOME, max_length=255)
+    landing = models.BooleanField(_("Landing Page"), default=False)
 
     @models.permalink
     def get_absolute_url(self):

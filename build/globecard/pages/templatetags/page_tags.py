@@ -14,7 +14,10 @@ class PagesForSectionNode(template.Node):
         self.var_name = var_name
 
     def render(self, context):
-        context[self.var_name] = Page.objects.filter(section=self.section.resolve(context))
+        context[self.var_name] = Page.objects.filter(
+            section=self.section.resolve(context), 
+            landing=False,
+        )
 
         return ""
 

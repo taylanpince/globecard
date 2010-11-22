@@ -7,15 +7,6 @@ from careers.forms import JobApplicationForm
 from careers.models import JobPosition
 
 
-def landing(request):
-    """
-    Landing page for careers
-    """
-    return render_to_response("careers/landing.html", {
-        
-    }, context_instance=RequestContext(request))
-
-
 def list(request):
     """
     Renders a list of available positions
